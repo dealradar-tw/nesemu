@@ -28,7 +28,7 @@ jobs:
         run: |
           if [ -f NesEmu.zip ]; then
             unzip -q NesEmu.zip
-            cd NesEmu
+            if [ -d NesEmu ]; then cd NesEmu; fi
           fi
           gradle assembleDebug --no-daemon --stacktrace
           mkdir -p "$GITHUB_WORKSPACE/out"
